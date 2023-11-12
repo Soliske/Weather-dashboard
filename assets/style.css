@@ -10,6 +10,7 @@ body {
     font-size: 120%;
 }
 
+
 .card {
     background: #000000d0;
     color: white;
@@ -43,6 +44,9 @@ input.search-bar {
 h1.temp {
     margin: 0;
 }
+
+/* search history */
+
 
 /* but stuff */
 button:hover {
