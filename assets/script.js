@@ -79,7 +79,7 @@ function getLocation(city) {
     city +
     "&appid=" +
     apiKey;
-  // Fetch data from the API and return a JSON object
+  // Fetch data from the API
   fetch(locationUrl)
     .then(function (data) {
       return data.json();
@@ -109,27 +109,22 @@ function getWeather(lat, lon){
 // Here the function takes in weather data from an API and updates the relevant DOM elements with the weather information
 function displayWeather(data) {
   console.log(data);
-  // Extract the relevant weather data from the API response
+  // Extracts the relevant weather data from the API response
   var city = data.city.name;
   cityHistoryEl.textcontext= "";
   
-  // Remember, pleaase loop through the first 6 items in the API response and extract the temperature, humidity, wind speed, and date
+  // This will loop through the first 6 items in the API response and extract the temperature, humidity, wind speed, and date
   for (let i=0;i<6;i++){
     temps[i] = data.list[indexs[i]].main.temp;
     humids[i] = data.list[indexs[i]].main.humidity;
     winds[i] = data.list[indexs[i]].wind.speed;
     dates[i] = new Date(data.list[indexs[i]].dt * 1000);
   }
-  // Add the first 5 items in the API response to the "cities" array
+  // Adds first 5 "city" res to the array
   for (let i=0;i<5;i++){
     cities.push(data.list[i]);
   }
 
-  // Update the DOM elements with the relevant weather data
-  // Hello there, and welcome visitor - upon viewing this code you'll understand that for legacy purposes... 
-  // this is where the trials and tribulations begin with having the relevant data appear for the module...
-  // please, ensure that if you follow my methodology and approach that you are careful with referrencing the correct data 
-  // SO becareful when using similar wording 
   for (let j=0; j<6; j++){
     tempEls[j].textContent = "Temperature: " + temps[j] + "°C";
     humidEls[j].textContent = "Humidity: " + humids[j] + "%";
@@ -139,7 +134,6 @@ function displayWeather(data) {
   }
 }
 
-// Always leave at bottum
 // This event listener is triggered when the user clicks the search button. 
 // It retrieves the user's search input and calls the "getLocation" function to get the weather data
 searchButtonEl.addEventListener("click", function () {
@@ -161,7 +155,7 @@ searchButtonEl.addEventListener("click", function () {
 // Retrieve city history from local storage, or initialize empty array if not present
 var city_history = JSON.parse(localStorage.getItem("city_history")) || [];
 
-// This function prints the city history on the page, with each city as a button that can be clicked to retrieve the weather data
+// Displays search history with the opt to reselect the weather data
 function printCityHistory() {
   cityHistoryEl.innerHTML = "";
   console.log(cityHistoryEl);

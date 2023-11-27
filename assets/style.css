@@ -45,8 +45,6 @@ h1.temp {
     margin: 0;
 }
 
-/* search history */
-
 
 /* But stuff */
 button:hover {
@@ -67,43 +65,18 @@ button {
     transition: 0.2s ease-in-out;
 }
 
-
-/* Resort code */
+/*  */
 *{
     box-sizing: border-box;
     margin:0;
     padding:0;
 }
+
 /* Search history */
 #search-history{
   font-size: 1.2rem;
-  color: rgba(15, 14, 14, 0.769);
+  color: rgba(251, 242, 242, 0.769);
 
-}
-#search-button {
-  cursor: pointer;
-}
-#city-history {
-  cursor: pointer;
-}
-
-header {
-color: white;
-text-align: center;
-font-size: 1.5rem;
-display: flex;
-flex-direction: column; 
-justify-content: center; 
-align-items: center; 
-background-color: rgba(227, 93, 16, 0.234);
-border: 1px solid rgba(255, 255, 255, 0.394);
-border-radius: 1rem; 
-text-align: center; 
-box-shadow: 0 0 10px rgb(227, 131, 72); 
-}
-
-.container{
-    padding: 20px 70px;
 }
 
 .row {
@@ -120,6 +93,7 @@ box-shadow: 0 0 10px rgb(227, 131, 72);
   border-radius: 1rem;
 }
 
+/* Temp card design */
 .card-block {
   display: flex;
   flex-direction: column; 
@@ -131,8 +105,4 @@ box-shadow: 0 0 10px rgb(227, 131, 72);
   text-align: center; 
   min-height: 300px; 
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.988); 
-}
-
-/* Media query */
-@media screen and (min-width: 768px) {
 }
